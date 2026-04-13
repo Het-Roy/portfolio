@@ -49,6 +49,17 @@ export default function Portfolio() {
 
   return (
     <div className="app-root">
+      <Helmet>
+        <title>Het Roy | Portfolio</title>
+        <meta name="description" content="Portfolio of Het Roy, a Full Stack Developer & SDE. Showcasing projects built with React, Vite, and modern web technologies." />
+        <meta name="keywords" content="het roy portfolio, portfolio, het roy , sde portfolio, react, vite, HET ROY, Het Roy" />
+        
+        {/* Open Graph / Social Media */}
+        <meta property="og:title" content="Het Roy | Portfolio" />
+        <meta property="og:description" content="Explore my projects and skills as a Full Stack Developer." />
+        <meta property="og:url" content="https://portfolio-hetroy.vercel.app/" />
+        <meta property="og:type" content="website" />
+      </Helmet>
       <Background />
       <CustomCursor position={cursorPos} />
 
