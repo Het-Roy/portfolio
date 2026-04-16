@@ -56,7 +56,6 @@ export default function HackathonsSection() {
           box-shadow: none;
           display: flex;
           flex-direction: column;
-          /* Each card will have dynamic top offset in inline styles */
           will-change: transform;
         }
 
@@ -119,7 +118,6 @@ export default function HackathonsSection() {
           display: flex;
           align-items: center;
           justify-content: center;
-          /* Pull slightly to the right if needed, but flex takes care of it usually */
         }
 
         .stack-bg-media {
@@ -153,10 +151,6 @@ export default function HackathonsSection() {
 
       <div className="stack-section-wrapper" ref={containerRef}>
         {HACKATHONS.map((hack, index) => {
-          // Calculate sticky top offset per card so they peek over each other
-          // The first card stops at 120px from screen top. 
-          // The next stops at 120 + 80 = 200px.
-          // The third at 200 + 80 = 280px.
           const topOffset = 120 + (index * 80);
 
           return (
@@ -165,7 +159,7 @@ export default function HackathonsSection() {
               className="stack-card"
               style={{
                 backgroundColor: hack.bg,
-                top: \`\${topOffset}px\`,
+                top: `${topOffset}px`,
                 zIndex: (index + 1) * 10
               }}
             >
@@ -181,7 +175,7 @@ export default function HackathonsSection() {
                   <div 
                     className="stack-bg-media" 
                     style={{ background: hack.imageGradient }} 
-                    title={\`\${hack.name} visual\`}
+                    title={`${hack.name} visual`}
                   />
                 </div>
               </div>
