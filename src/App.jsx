@@ -9,6 +9,8 @@ import SkillsSection from './components/SkillsSection.jsx';
 import ProjectsSection from './components/ProjectsSection.jsx';
 import CertificatesSection from './components/CertificatesSection.jsx';
 import EducationSection from './components/EducationSection.jsx';
+import HackathonsSection from './components/HackathonsSection.jsx';
+import AchievementsSection from './components/AchievementsSection.jsx';
 import SocialLinksSection from './components/SocialLinksSection.jsx';
 import ContactSection from './components/ContactSection.jsx';
 import Footer from './components/Footer.jsx';
@@ -19,7 +21,8 @@ const SECTIONS = [
   { id: 'skills', label: 'Skills' },
   { id: 'projects', label: 'Projects' },
   { id: 'certificates', label: 'Certificates' },
-  { id: 'education', label: 'Education' },
+  { id: 'hackathons', label: 'Hackathons' },
+  { id: 'achievements', label: 'Achievements' },
   { id: 'contact', label: 'Contact' },
 ];
 
@@ -81,7 +84,8 @@ export default function Portfolio() {
         <SkillsSection />
         <ProjectsSection />
         <CertificatesSection />
-        <EducationSection />
+        <HackathonsSection />
+        <AchievementsSection />
         <SocialLinksSection />
         <ContactSection />
         <Footer />
