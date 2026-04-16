@@ -22,7 +22,6 @@ const HACKATHONS = [
     takeaway: 'Built a robust credential issuance system on Ethereum testnet in 36 hours.',
     achievement: '🎖 Finalist',
     tech: ['React', 'Solidity', 'Node.js'],
-    // User drops the specific certificate image path here:
     certificateImg: 'https://res.cloudinary.com/demo/image/upload/sample.jpg' 
   },
   {
@@ -38,7 +37,6 @@ const HACKATHONS = [
     takeaway: 'Focused heavily on accessible UX for wallet connections using wagmi.',
     achievement: '✅ Participated',
     tech: ['React', 'Ethers.js', 'Tailwind'],
-    // User drops the specific certificate image path here:
     certificateImg: 'https://res.cloudinary.com/demo/image/upload/sample.jpg'
   },
   {
@@ -54,7 +52,6 @@ const HACKATHONS = [
     takeaway: 'Integrated ChatGPT API and built a real-time summarizer backend in Express.',
     achievement: '🏆 Winner',
     tech: ['Node.js', 'React', 'OpenAI'],
-    // User drops the specific certificate image path here:
     certificateImg: 'https://res.cloudinary.com/demo/image/upload/sample.jpg'
   },
   {
@@ -70,12 +67,10 @@ const HACKATHONS = [
     takeaway: 'Calculated and visualized local carbon metrics via public APIs.',
     achievement: '🥈 Runner-Up',
     tech: ['Python', 'Django', 'JS'],
-    // User drops the specific certificate image path here:
     certificateImg: 'https://res.cloudinary.com/demo/image/upload/sample.jpg'
   }
 ];
 
-// Icons using clean inline SVGs
 const CalendarIcon = () => (
   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
 );
@@ -111,14 +106,14 @@ export default function HackathonsSection() {
 
     nodes.forEach((node) => observer.observe(node));
     return () => observer.disconnect();
-  }, [showAll]); // Re-run when list expands
+  }, [showAll]);
 
   const visibleHackathons = showAll ? HACKATHONS : HACKATHONS.slice(0, 3);
 
   const getRoleColor = (role) => {
-    if (role === 'Winner') return 'var(--accent-secondary)'; // bright green/gold vibe
-    if (role === 'Runner-Up' || role === 'Finalist') return '#38bdf8'; // blue 
-    return '#94a3b8'; // muted gray for participants
+    if (role === 'Winner') return 'var(--accent-secondary)'; 
+    if (role === 'Runner-Up' || role === 'Finalist') return '#38bdf8'; 
+    return '#94a3b8'; 
   };
 
   const getRoleBg = (role) => {
@@ -195,7 +190,6 @@ export default function HackathonsSection() {
           box-shadow: 0 20px 50px rgba(126, 34, 206, 0.15);
         }
 
-        /* Certificate Hero Visual */
         .hack-visual {
           position: relative;
           width: 100%;
@@ -228,7 +222,7 @@ export default function HackathonsSection() {
           border-radius: 8px;
           box-shadow: 0 10px 30px rgba(0,0,0,0.6);
           border: 1px solid rgba(255, 255, 255, 0.08);
-          background: #ebebeb; /* For standard PDF prints with white margins */
+          background: #ebebeb; 
           transition: transform 0.5s ease;
           transform: rotate(-2deg);
         }
@@ -243,7 +237,6 @@ export default function HackathonsSection() {
           display: block;
         }
 
-        /* Content Strip */
         .hack-content {
           padding: clamp(24px, 3vw, 32px);
           display: flex;
@@ -312,7 +305,6 @@ export default function HackathonsSection() {
           line-height: 1.6;
         }
 
-        /* Footer Strip */
         .hack-footer {
           border-top: 1px solid rgba(255, 255, 255, 0.08);
           background: rgba(10, 15, 30, 0.5);
@@ -342,7 +334,6 @@ export default function HackathonsSection() {
           color: #cbd5e1;
         }
 
-        /* Toggle Button */
         .hack-toggle {
           margin: 40px auto 0;
           display: block;
@@ -384,7 +375,7 @@ export default function HackathonsSection() {
             <article 
               key={hack.id} 
               className="hack-card hack-animate-up" 
-              style={{ transitionDelay: \`\${(index % 3) * 0.1}s\` }}
+              style={{ transitionDelay: `${(index % 3) * 0.1}s` }}
             >
               {/* HERO VISUAL */}
               <div className="hack-visual">
@@ -392,7 +383,7 @@ export default function HackathonsSection() {
                 <div className="hack-img-wrapper">
                   <img 
                     src={hack.certificateImg} 
-                    alt={\`\${hack.name} Certificate\`} 
+                    alt={`${hack.name} Certificate`} 
                     loading="lazy"
                   />
                 </div>
