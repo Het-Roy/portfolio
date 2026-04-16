@@ -1,42 +1,35 @@
 import React, { useRef } from 'react';
-import { motion } from 'framer-motion';
 
 const HACKATHONS = [
   {
     id: 1,
     name: 'Sangam University',
-    subtitle: 'SU Hackathon • Offline Hackathon • Winner',
-    meta: 'Bhilwara, Rajasthan · 2025',
-    description: 'Secured 1st place by building a scalable full-stack solution under intense time pressure — demonstrating rapid architecture, domain collaboration & compelling pitching.',
-    bg: '#1e1e1e', // Sleek dark to match their screenshot's dark vibe somewhat, but keeping the flat card style
-    imageGradient: 'linear-gradient(135deg, rgba(245, 158, 11, 0.1), rgba(245, 158, 11, 0.05))',
-    borderColor: '#f59e0b', // Gold accent
-    linkText: '🏆 1st Place',
-    link: '#'
+    description: 'SU Hackathon • Offline Hackathon • Winner (Bhilwara, Rajasthan · 2025). Secured 1st place by building a scalable full-stack solution under intense time pressure — demonstrating rapid architecture, domain collaboration & compelling pitching.',
+    bg: '#B5A5A8', // Dusty mauve
+    imageGradient: 'linear-gradient(135deg, rgba(245, 158, 11, 0.2), rgba(245, 158, 11, 0.05))',
+    link: '#',
+    linkText: 'See more ↗',
+    certificateImg: '' // Placeholder intact
   },
   {
     id: 2,
     name: 'GU Hackathon',
-    subtitle: 'Offline Hackathon',
-    meta: 'Gujarat · 2024',
-    description: 'Participated in an intensive offline hackathon environment, focusing on innovative problem solving and robust full-stack development implementations.',
-    bg: '#1a1d24', 
-    imageGradient: 'linear-gradient(135deg, rgba(56, 189, 248, 0.1), rgba(56, 189, 248, 0.05))',
-    borderColor: '#38bdf8',
-    linkText: '🏅 Finalist / Participant',
-    link: '#'
+    description: 'Offline Hackathon (Gujarat · 2024). Participated in an intensive offline hackathon environment, focusing on innovative problem solving and robust full-stack development implementations.',
+    bg: '#9E8470', // Warm tan/brown
+    imageGradient: 'linear-gradient(135deg, rgba(56, 189, 248, 0.2), rgba(56, 189, 248, 0.05))',
+    link: '#',
+    linkText: 'See more ↗',
+    certificateImg: '' 
   },
   {
     id: 3,
-    name: 'Web3 & AI Sprint',
-    subtitle: 'Online Virtual Hack',
-    meta: 'Global · 2023',
-    description: 'An open-innovation track focused on decentralized apps layered with AI tooling. Rapidly prototyped a smart contract integrated with conversational AI.',
-    bg: '#1e1c24',
-    imageGradient: 'linear-gradient(135deg, rgba(162, 89, 255, 0.1), rgba(162, 89, 255, 0.05))',
-    borderColor: '#a259ff',
-    linkText: '✅ Completed',
-    link: '#'
+    name: 'Web3 Track',
+    description: 'Online Virtual Hack (Global · 2023). An open-innovation track focused on decentralized apps layered with AI tooling. Rapidly prototyped a smart contract integrated with conversational AI.',
+    bg: '#7A8FA0', // Slate
+    imageGradient: 'linear-gradient(135deg, rgba(162, 89, 255, 0.2), rgba(162, 89, 255, 0.05))',
+    link: '#',
+    linkText: 'See more ↗',
+    certificateImg: ''
   }
 ];
 
@@ -64,36 +57,28 @@ export default function HackathonsSection() {
           width: 100%;
           min-height: 480px;
           padding: 48px;
-          box-shadow: 0 -10px 40px rgba(0,0,0,0.4);
+          box-shadow: 0 -10px 40px rgba(0,0,0,0.15); /* Soft shadow against card below */
           display: flex;
           flex-direction: column;
           will-change: transform;
-          border: 1px solid rgba(255,255,255,0.05);
+          border: none;
         }
 
         .stack-card-title {
-          font-size: clamp(32px, 5vw, 48px);
-          font-weight: 800;
+          font-size: clamp(32px, 5vw, 40px);
+          font-weight: 700;
           color: #ffffff;
+          text-align: center;
           width: 100%;
-          margin-bottom: 8px;
-          font-family: var(--font-display);
-          line-height: 1.1;
-        }
-
-        .stack-card-subtitle {
-          font-size: 14px;
-          letter-spacing: 2px;
-          text-transform: uppercase;
-          font-family: var(--font-display);
           margin-bottom: 40px;
+          font-family: var(--font-display);
         }
 
         .stack-card-content {
           display: flex;
           flex-direction: row;
           justify-content: space-between;
-          align-items: stretch;
+          align-items: center;
           gap: 40px;
           flex: 1;
         }
@@ -102,47 +87,38 @@ export default function HackathonsSection() {
           width: 40%;
           display: flex;
           flex-direction: column;
-          justify-content: center;
           gap: 24px;
         }
 
-        .stack-card-meta {
-          font-size: 14px;
-          color: rgba(255, 255, 255, 0.4);
-          font-family: var(--font-display);
-        }
-
         .stack-card-desc {
-          font-size: clamp(15px, 1.5vw, 17px);
-          color: rgba(255, 255, 255, 0.65);
-          line-height: 1.8;
+          font-size: 16px;
+          color: rgba(255, 255, 255, 0.55);
+          line-height: 1.7;
+          display: -webkit-box;
+          -webkit-line-clamp: 4;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
           font-family: var(--font-body);
         }
 
         .stack-card-link {
           color: #ffffff;
-          font-weight: 600;
-          font-size: 15px;
-          display: inline-flex;
-          align-items: center;
-          gap: 8px;
-          font-family: var(--font-display);
-          padding: 12px 20px;
-          border-radius: 999px;
-          background: rgba(255,255,255,0.05);
+          text-decoration: underline;
+          font-weight: 500;
+          font-size: 16px;
+          display: inline-block;
+          font-family: var(--font-body);
+          transition: color 0.2s ease;
           width: fit-content;
-          text-decoration: none;
-          transition: background 0.2s ease, transform 0.2s ease;
         }
 
         .stack-card-link:hover {
-          background: rgba(255,255,255,0.1);
-          transform: translateY(-2px);
+          color: rgba(255, 255, 255, 0.8);
         }
 
         .stack-card-right {
           width: 55%;
-          /* Switched to responsive aspect ratio for certificates */
+          /* 4:3 certificate aspect ratio orientation */
           aspect-ratio: 4 / 3;
           border-radius: 16px;
           overflow: hidden;
@@ -155,21 +131,22 @@ export default function HackathonsSection() {
         .stack-bg-media {
           width: 100%;
           height: 100%;
-          /* contain ensures horizontal/landscape certificates aren't cropped */
-          object-fit: contain; 
-          padding: 24px;
-          box-sizing: border-box;
+          object-fit: contain; /* Certificates fit safely */
           backdrop-filter: blur(10px);
+          padding: 16px;
+          box-sizing: border-box;
+          position: relative;
+          z-index: 1;
         }
-        
-        .stack-bg-media-placeholder {
+
+        .stack-bg-placeholder {
            position: absolute;
            inset: 0;
            display: flex;
            align-items: center;
            justify-content: center;
            font-family: var(--font-display);
-           color: rgba(255,255,255,0.2);
+           color: rgba(255,255,255,0.4);
            text-transform: uppercase;
            letter-spacing: 2px;
            font-size: 13px;
@@ -198,7 +175,7 @@ export default function HackathonsSection() {
 
       <div className="stack-section-wrapper" ref={containerRef}>
         {HACKATHONS.map((hack, index) => {
-          const topOffset = 120 + (index * 60); // Tighter stack gap
+          const topOffset = 120 + (index * 80); // Strict stacking gap to show the massive centered titles
 
           return (
             <div 
@@ -210,32 +187,23 @@ export default function HackathonsSection() {
                 zIndex: (index + 1) * 10
               }}
             >
-              <div style={{ borderBottom: `1px solid rgba(255,255,255,0.08)`, paddingBottom: '24px', marginBottom: '32px' }}>
-                <h3 className="stack-card-title">{hack.name}</h3>
-                <div className="stack-card-subtitle" style={{ color: hack.borderColor }}>
-                  {hack.subtitle}
-                </div>
-              </div>
+              <h3 className="stack-card-title">{hack.name}</h3>
 
               <div className="stack-card-content">
                 <div className="stack-card-left">
-                  <div className="stack-card-meta">{hack.meta}</div>
                   <p className="stack-card-desc">{hack.description}</p>
-                  <a href={hack.link} className="stack-card-link">
-                    {hack.linkText}
-                  </a>
+                  <a href={hack.link} className="stack-card-link">{hack.linkText}</a>
                 </div>
                 
                 <div 
-                  className="stack-card-right" 
-                  style={{ background: hack.imageGradient, border: `1px solid rgba(255,255,255,0.05)` }}
+                  className="stack-card-right"
+                  style={{ background: hack.imageGradient }}
                 >
-                  <div className="stack-bg-media-placeholder">Your Certificate Here</div>
+                  <div className="stack-bg-placeholder">Your Certificate Here</div>
                   <img 
                     className="stack-bg-media" 
                     src={hack.certificateImg || "data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="} 
-                    alt={`${hack.name} Certificate`}
-                    style={{ position: 'relative', zIndex: 1 }}
+                    alt={`${hack.name} visual`}
                   />
                 </div>
               </div>
