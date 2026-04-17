@@ -40,7 +40,7 @@ const DESIGNS = [
   },
   {
     id: 6,
-    title: 'Analytics Data Viz',
+    title: 'Hotel Booking UI',
     image: 'https://res.cloudinary.com/dwpjwccxd/image/upload/q_auto/f_auto/v1776424141/Screenshot_2026-04-17_162937_lcv036.png',
     link: 'https://www.figma.com/@hetroy',
     accentRGB: '242, 78, 30',
@@ -57,11 +57,12 @@ const DESIGNS = [
     title: 'Dark Mode Design System',
     image: 'https://res.cloudinary.com/dwpjwccxd/image/upload/q_auto/f_auto/v1776424143/Screenshot_2026-04-17_163100_z8mdr0.png',
     link: 'https://www.figma.com/@hetroy',
+    
     accentRGB: '10, 207, 131',
   },
   {
     id: 9,
-    title: 'Travel Dashboard UI',
+    title: 'Personal Portfolio UI',
     image: 'https://res.cloudinary.com/dwpjwccxd/image/upload/q_auto/f_auto/v1776424554/Screenshot_2026-04-17_164532_aydwik.png',
     link: 'https://www.figma.com/@hetroy',
     accentRGB: '162, 89, 255',
