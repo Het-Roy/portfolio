@@ -1,5 +1,6 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet';
+import { useNavigate } from 'react-router-dom';
 import Background from '../components/Background.jsx';
 import CustomCursor from '../components/CustomCursor.jsx';
 import Navigation from '../components/Navigation.jsx';
@@ -16,20 +17,20 @@ import ContactSection from '../components/ContactSection.jsx';
 import Footer from '../components/Footer.jsx';
 
 const SECTIONS = [
-  { id: 'hero', label: 'Home' },
-  { id: 'about', label: 'About' },
-  { id: 'skills', label: 'Skills' },
-  { id: 'projects', label: 'Projects' },
-  { id: 'designs', label: 'Designs' },
-  { id: 'hackathon', label: 'Hackathon' },
-  { id: 'certificates', label: 'Certificates' },
-  { id: 'contact', label: 'Contact' },
+  { id: '/', label: 'Home' },
+  { id: '/about', label: 'About' },
+  { id: '/skills', label: 'Skills' },
+  { id: '/projects', label: 'Projects' },
+  { id: '/designs', label: 'Designs' },
+  { id: '/hackathon', label: 'Hackathon' },
+  { id: '/certificates', label: 'Certificates' },
+  { id: '/contact', label: 'Contact' },
 ];
 
 export default function HomePage() {
   const [loading, setLoading] = useState(true);
   const [cursorPos, setCursorPos] = useState({ x: 0, y: 0 });
-  const scrollContainerRef = useRef(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const timer = setTimeout(() => setLoading(false), 1400);
@@ -43,12 +44,6 @@ export default function HomePage() {
     window.addEventListener('mousemove', handleMove);
     return () => window.removeEventListener('mousemove', handleMove);
   }, []);
-
-  const scrollToSection = (id) => {
-    const el = document.getElementById(id);
-    if (!el) return;
-    el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  };
 
   return (
     <div className="app-root">
@@ -74,10 +69,10 @@ export default function HomePage() {
         </div>
       )}
 
-      <Navigation sections={SECTIONS} onNavigate={scrollToSection} />
+      <Navigation sections={SECTIONS} onNavigate={(id) => navigate(id)} />
 
-      <main ref={scrollContainerRef} className="app-scroll-container">
-        <HeroSection onSecondaryCta={() => scrollToSection('contact')} />
+      <main className="app-scroll-container">
+        <HeroSection onSecondaryCta={() => navigate('/contact')} />
         <AboutSection />
         <SkillsSection />
         <ProjectsSection />
