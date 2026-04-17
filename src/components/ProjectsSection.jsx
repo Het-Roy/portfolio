@@ -75,7 +75,7 @@ const PROJECTS = [
     tech: ['React', 'Node.js', 'JavaScript'],
     color: '#38bdf8',
     accentRGB: '56, 189, 248',
-    previewImage: 'https://res.cloudinary.com/dwpjwccxd/image/upload/v1773652844/indrive_gzmkqj.
+    previewImage: 'https://res.cloudinary.com/dwpjwccxd/image/upload/v1773652844/indrive_gzmkqj.png',
   },
 ];
 

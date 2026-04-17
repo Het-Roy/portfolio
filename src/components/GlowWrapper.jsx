@@ -1,5 +1,6 @@
 import React, { useRef, useEffect } from 'react';
 
+// eslint-disable-next-line react-refresh/only-export-components
 export const useGlowTracking = (ref) => {
   useEffect(() => {
     const el = ref.current;
