@@ -1,19 +1,19 @@
 import React, { useState } from 'react';
 
 const tabs = [
-  { id: 'SU', label: 'SU HACKATHON' },
-  { id: 'GU', label: 'GU HACKATHON' }
+  { id: 'GU', label: 'GU HACKATHON' },
+  { id: 'GEC', label: 'GEC HACKATHON' }
 ];
 
 const data = {
-  SU: {
-    status: 'ONLINE HACKATHON - FINALIST',
-    uniLine1: 'Stanford',
-    uniLine2: 'University',
-    location: 'Stanford, California · 2024',
+  GEC: {
+    status: 'Hack the Spring',
+    uniLine1: 'GEC',
+    uniLine2: 'Gandhinagar',
+    location: 'Gandhinagar, Gujarat · 2026',
     achievementIcon: '🏅',
-    achievementTitle: 'Top 10 Finalist',
-    achievementSub: 'Online Global Hackathon',
+    achievementTitle: 'Top Participants',
+    achievementSub: 'Offline Competitive Hackathon',
     description: 'Secured a finalist spot by building a high-impact, scalability-focused web application. Demonstrated exceptional problem-solving and full-stack capabilities under immense pressure.',
     images: [
       'https://picsum.photos/seed/su1/600/750',
@@ -24,13 +24,13 @@ const data = {
     ]
   },
   GU: {
-    status: 'OFFLINE HACKATHON - WINNER',
-    uniLine1: 'Ganpat',
+    status: 'Craftathon 2K26',
+    uniLine1: 'Gandhinagar',
     uniLine2: 'University',
-    location: 'Mehsana, Gujarat · 2025',
+    location: 'Gandhinagar, Gujarat · 2026',
     achievementIcon: '🏆',
-    achievementTitle: '2nd Place',
-    achievementSub: 'Offline Hackathon',
+    achievementTitle: 'Top Participants',
+    achievementSub: 'Offline Competitive Hackathon',
     description: 'Clinched 2nd at Ganpat University with a project that impressed judges across design, usability & technical depth — a showcase of teamwork and production-ready code delivery.',
     images: [
       'https://picsum.photos/seed/gu1/600/750',
