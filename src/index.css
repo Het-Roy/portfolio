@@ -1107,3 +1107,448 @@ textarea.field-control {
 ::-webkit-scrollbar-thumb:hover {
   background: var(--accent-secondary);
 }
+
+/* ═══════════════════════════════════════════════════════════════════
+   COMPREHENSIVE RESPONSIVE SYSTEM
+   Breakpoints: 480px · 640px · 768px · 1024px
+   ═══════════════════════════════════════════════════════════════════ */
+
+/* ─── BASE MOBILE FIRST OVERRIDES (≤ 480px) ──────────────────── */
+@media (max-width: 480px) {
+  /* Section padding tighter on small phones */
+  .section {
+    padding: 48px 16px;
+  }
+
+  /* Hero: stack everything, shrink gap */
+  .hero-wrapper {
+    padding-top: 72px; /* account for fixed nav */
+    min-height: auto;
+    padding-bottom: 40px;
+  }
+
+  .hero-inner {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 28px;
+  }
+
+  .hero-cta-row {
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .hero-cta-row .btn-primary,
+  .hero-cta-row .btn-outline {
+    width: 100%;
+    max-width: 280px;
+    justify-content: center;
+  }
+
+  .hero-social-row {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .hero-image-wrapper {
+    width: min(85vw, 280px);
+    height: min(85vw, 300px);
+    animation: none;
+    margin: 0 auto;
+  }
+
+  /* Nav */
+  .nav-root {
+    padding: 14px 16px;
+  }
+
+  /* Buttons full-width stretch on phone */
+  .btn-primary,
+  .btn-outline {
+    padding: 13px 22px;
+    font-size: 11px;
+  }
+
+  /* Skills */
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* About */
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Projects carousel — single col */
+  .project-card-v2 {
+    grid-template-columns: 1fr;
+  }
+
+  .project-card-preview {
+    order: -1;
+  }
+
+  .project-links {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .project-links a,
+  .project-links .btn-yt {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+  }
+
+  /* Certificates */
+  .cert-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Contact */
+  .contact-v2-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-right {
+    display: none; /* hide decorative gif on tiny screens */
+  }
+
+  /* Timeline */
+  .timeline {
+    padding-left: 18px;
+  }
+
+  .timeline-card {
+    margin-left: 16px;
+    padding: 14px 16px;
+  }
+
+  /* Social grid */
+  .social-grid {
+    gap: 14px;
+  }
+
+  .social-card {
+    width: clamp(120px, 40vw, 160px);
+    padding: 16px 12px;
+  }
+
+  /* Mobile nav panel */
+  .nav-mobile {
+    top: 56px;
+    padding: 18px 18px 22px;
+    gap: 14px;
+  }
+
+  /* Scroll indicator: hide on very small */
+  .scroll-indicator {
+    display: none;
+  }
+
+  /* Footer */
+  .footer {
+    padding: 24px 16px;
+    font-size: 12px;
+  }
+
+  /* Hackathon card */
+  .hc-wrapper {
+    padding: 2rem 0.5rem;
+  }
+
+  .hc-uni-name {
+    font-size: 32px !important;
+  }
+
+  .hc-right {
+    padding: 18px 16px !important;
+  }
+
+  .hc-tab-container {
+    width: 100% !important;
+    justify-content: space-between;
+  }
+
+  .hc-desc {
+    max-width: 100% !important;
+  }
+}
+
+/* ─── SMALL TABLETS / LARGE PHONES (481px – 640px) ──────────── */
+@media (min-width: 481px) and (max-width: 640px) {
+  .section {
+    padding: 56px 20px;
+  }
+
+  .hero-wrapper {
+    padding-top: 80px;
+    padding-bottom: 40px;
+    min-height: auto;
+  }
+
+  .hero-inner {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 32px;
+  }
+
+  .hero-cta-row {
+    justify-content: center;
+  }
+
+  .hero-social-row {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .hero-image-wrapper {
+    width: min(70vw, 300px);
+    height: min(70vw, 320px);
+    animation: none;
+    margin: 0 auto;
+  }
+
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project-card-v2 {
+    grid-template-columns: 1fr;
+  }
+
+  .project-card-preview {
+    order: -1;
+  }
+
+  .cert-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-v2-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-right {
+    display: none;
+  }
+}
+
+/* ─── TABLETS (641px – 768px) ────────────────────────────────── */
+@media (min-width: 641px) and (max-width: 768px) {
+  .hero-wrapper {
+    padding-top: 88px;
+    min-height: auto;
+    padding-bottom: 48px;
+  }
+
+  .hero-inner {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 36px;
+  }
+
+  .hero-social-row {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .hero-image-wrapper {
+    width: clamp(240px, 55vw, 340px);
+    height: clamp(260px, 55vw, 360px);
+    animation: none;
+    margin: 0 auto;
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-v2-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-right {
+    display: none;
+  }
+
+  .cert-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ─── LARGE TABLETS / SMALL DESKTOPS (769px – 1024px) ────────── */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .hero-inner {
+    gap: clamp(30px, 4vw, 50px);
+  }
+
+  .hero-image-wrapper {
+    width: clamp(240px, 36vw, 340px);
+    height: clamp(260px, 38vw, 360px);
+  }
+
+  .about-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .cert-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .contact-v2-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .hc-uni-name {
+    font-size: 40px !important;
+  }
+}
+
+/* ─── TOUCH DEVICE: remove hover-only effects ─────────────────── */
+@media (hover: none) and (pointer: coarse) {
+  .card-surface:hover,
+  .about-subsection:hover,
+  .cert-card:hover,
+  .project-card-v2:hover,
+  .social-card:hover,
+  .timeline-card:hover {
+    transform: none;
+    box-shadow: none;
+  }
+
+  .hero-social-link:hover {
+    transform: none;
+    box-shadow: none;
+  }
+
+  .btn-primary:hover,
+  .btn-outline:hover {
+    transform: none;
+  }
+
+  .nav-link::after {
+    display: none;
+  }
+}
+
+/* ─── UTILITY: prevent overflow on all screen sizes ───────────── */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.section-title {
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+.section-subtitle {
+  max-width: 100%;
+}
+
+/* ─── Projects modal — responsive ────────────────────────────── */
+@media (max-width: 640px) {
+  /* modal inner box already uses maxWidth: 760 inline,
+     override via class here */
+  [role="dialog"] > div {
+    padding: 24px 18px 20px !important;
+    max-height: 88vh;
+    overflow-y: auto;
+  }
+}
+
+/* ─── Carousel container: full-width on mobile ────────────────── */
+@media (max-width: 640px) {
+  /* Ensure carousel doesn't cause horizontal overflow */
+  .projects-grid,
+  [class*="carousel"] {
+    overflow: hidden;
+  }
+}
+
+/* ─── HeroSection text: left-align on desktop, center on mobile ── */
+@media (max-width: 768px) {
+  .hero-inner > div:first-child {
+    text-align: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .hero-cta-row {
+    justify-content: center;
+  }
+
+  .hero-social-row {
+    justify-content: center;
+  }
+}
+
+/* ─── Navigation: wider burger hit target on touch ────────────── */
+@media (max-width: 768px) {
+  .nav-burger {
+    padding: 6px;
+    margin-right: -6px;
+  }
+
+  .nav-root {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+}
+
+/* ─── Hackathon card mobile tweaks ────────────────────────────── */
+@media (max-width: 640px) {
+  .hc-tab-container {
+    width: 100% !important;
+  }
+
+  .hc-tab-btn {
+    flex: 1;
+    text-align: center;
+    font-size: 10px !important;
+    padding: 7px 10px !important;
+  }
+
+  .hc-thumb-btn {
+    width: 48px !important;
+    height: 48px !important;
+  }
+
+  .hc-cta {
+    height: 46px !important;
+  }
+
+  .hc-right {
+    padding: 20px 16px !important;
+  }
+}
+
+/* ─── Contact form: full-width inputs on mobile ───────────────── */
+@media (max-width: 640px) {
+  .field-control {
+    font-size: 16px; /* prevents iOS zoom on focus */
+  }
+
+  .contact-form {
+    gap: 12px;
+  }
+}
+
+/* ─── Figma masonry: single column on tiny screens ────────────── */
+@media (max-width: 479px) {
+  .figma-masonry {
+    column-count: 1 !important;
+  }
+}
+

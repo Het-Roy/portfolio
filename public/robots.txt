@@ -1,4 +1,23 @@
+# robots.txt — Het Roy Portfolio
+# https://portfolio-hetroy.vercel.app
+
 User-agent: *
 Allow: /
+Allow: /about
+Allow: /skills
+Allow: /projects
+Allow: /designs
+Allow: /hackathon
+Allow: /certificates
+Allow: /education
+Allow: /contact
 
+# Block access to build artifacts and config files
+Disallow: /dist/
+Disallow: /.git/
+Disallow: /node_modules/
+Disallow: /src/
+
+# Sitemap location
 Sitemap: https://portfolio-hetroy.vercel.app/sitemap.xml
+Sitemap: https://portfolio-hetroy.vercel.app/sitemap.html
