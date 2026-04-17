@@ -3,9 +3,9 @@ import React, { useState } from 'react';
 const Logo = () => (
   <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', userSelect: 'none' }}>
     <img 
-      src="https://res.cloudinary.com/dwpjwccxd/image/upload/e_make_transparent:15:black/q_auto/f_auto/v1776427795/Screenshot_2026-04-17_173825_v4hrer.png" 
+      src="https://res.cloudinary.com/dwpjwccxd/image/upload/q_auto/f_auto/v1776427795/Screenshot_2026-04-17_173825_v4hrer.png" 
       alt="Het Roy Logo" 
-      style={{ width: '42px', height: 'auto', objectFit: 'contain' }} 
+      style={{ width: '56px', height: 'auto', objectFit: 'contain', mixBlendMode: 'screen', filter: 'contrast(1.2)' }} 
     />
   </div>
 );
