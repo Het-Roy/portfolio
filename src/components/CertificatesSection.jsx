@@ -1,6 +1,7 @@
 import React, { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import Carousel from './Carousel.jsx';
+import { useGlowTracking } from './GlowWrapper.jsx';
 
 const CERTIFICATES = [
   {
@@ -35,6 +36,7 @@ const CERTIFICATES = [
 function CertCard({ cert, index, isCenter }) {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: '-80px' });
+  useGlowTracking(ref);
 
   const cardContent = (
     <>
@@ -64,7 +66,7 @@ function CertCard({ cert, index, isCenter }) {
   return (
     <motion.article
       ref={ref}
-      className="cert-card"
+      className="gcard-wrapper"
       initial={{ opacity: 0, y: 40 }}
       animate={inView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.55, ease: 'easeOut' }}
@@ -72,8 +74,11 @@ function CertCard({ cert, index, isCenter }) {
         boxShadow: isCenter ? `0 0 30px rgba(92, 225, 230, 0.2)` : 'none',
         transition: 'box-shadow 0.5s ease',
         margin: '0 auto',
+        '--card-accent-rgb': '92, 225, 230', // Default cyan/green
+        borderRadius: '20px'
       }}
     >
+      <div className="cert-card gcard-inner" style={{ borderRadius: 'inherit', background: '#121218' }}>
       {cert.link ? (
         <a href={cert.link} target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', color: 'inherit', display: 'flex', flexDirection: 'column', height: '100%' }}>
           {cardContent}
@@ -81,6 +86,7 @@ function CertCard({ cert, index, isCenter }) {
       ) : (
         cardContent
       )}
+      </div>
     </motion.article>
   );
 }

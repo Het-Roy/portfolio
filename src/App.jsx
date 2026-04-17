@@ -7,6 +7,7 @@ import HeroSection from './components/HeroSection.jsx';
 import AboutSection from './components/AboutSection.jsx';
 import SkillsSection from './components/SkillsSection.jsx';
 import ProjectsSection from './components/ProjectsSection.jsx';
+import FigmaSection from './components/FigmaSection.jsx';
 import CertificatesSection from './components/CertificatesSection.jsx';
 import HackathonCard from './components/HackathonCard.jsx';
 import EducationSection from './components/EducationSection.jsx';
@@ -19,6 +20,7 @@ const SECTIONS = [
   { id: 'about', label: 'About' },
   { id: 'skills', label: 'Skills' },
   { id: 'projects', label: 'Projects' },
+  { id: 'designs', label: 'Designs' },
   { id: 'hackathon', label: 'Hackathon' },
   { id: 'certificates', label: 'Certificates' },
   { id: 'contact', label: 'Contact' },
@@ -81,6 +83,7 @@ export default function Portfolio() {
         <AboutSection />
         <SkillsSection />
         <ProjectsSection />
+        <FigmaSection />
         <div id="hackathon">
            <HackathonCard />
         </div>

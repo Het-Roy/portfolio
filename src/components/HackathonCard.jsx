@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
+import { useGlowTracking } from './GlowWrapper.jsx';
 
 const tabs = [
   { id: 'GU', label: 'GU HACKATHON' },
@@ -46,6 +47,9 @@ const HackathonCard = () => {
   const [activeTabId, setActiveTabId] = useState('GU');
   const [animatingTab, setAnimatingTab] = useState(false);
   const [activeImageIdx, setActiveImageIdx] = useState(0);
+  
+  const cardRef = useRef(null);
+  useGlowTracking(cardRef);
 
   const handleTabSwitch = (newTabId) => {
     if (newTabId === activeTabId || animatingTab) return;
@@ -276,7 +280,12 @@ const HackathonCard = () => {
       </h2>
 
       {/* OUTER CONTAINER */}
-      <div className="hc-card hc-anim-entrance">
+      <div 
+        ref={cardRef}
+        className="gcard-wrapper hc-anim-entrance"
+        style={{ '--card-accent-rgb': '108, 78, 246', width: '100%', maxWidth: '960px', borderRadius: '20px', margin: '0 auto' }}
+      >
+      <div className="hc-card gcard-inner" style={{ borderRadius: 'inherit', background: '#0D0D0F', maxWidth: '100%', border: 'none' }}>
         {/* Subtle purple top-edge gradient glow */}
         <div className="hc-glow" />
         
@@ -409,12 +418,17 @@ const HackathonCard = () => {
 
             {/* CTA BUTTON */}
             <button className="hc-cta">
-               <span className="hc-cta-text">Continue to portfolio</span>
+               <span className="hc-cta-text">Know More</span>
+               <span className="hc-cta-arrow">→</span>
+            </button>
+            <button className="hc-cta">
+               <span className="hc-cta-text">View Project</span>
                <span className="hc-cta-arrow">→</span>
             </button>
           </div>
 
         </div>
+      </div>
       </div>
     </div>
   );

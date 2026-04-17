@@ -2,6 +2,7 @@ import React, { useRef, useState } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { MongoIcon, NodeIcon, ReactIcon, JSIcon } from './TechnologyIcon.jsx';
 import Carousel from './Carousel.jsx';
+import { useGlowTracking } from './GlowWrapper.jsx';
 
 const PROJECTS = [
   {
@@ -13,8 +14,8 @@ const PROJECTS = [
     youtube: 'https://youtu.be/V4DdGLpUJ-E?si=DK-JivLrwvw6pjl4',
     tech: ['React', 'Node.js', 'MongoDB', 'JavaScript'],
     color: 'var(--accent-secondary)',
+    accentRGB: '34, 197, 94', // #22c55e -> 34, 197, 94
     previewImage: 'https://res.cloudinary.com/dwpjwccxd/image/upload/v1773652464/taylorstitch_hujjv9.png',
-    figma: 'https://www.figma.com/file/placeholder-taylor-stitch',
   },
   {
     title: 'Big Basket',
@@ -25,8 +26,8 @@ const PROJECTS = [
     youtube: '#',
     tech: ['React', 'JavaScript'],
     color: '#84cc16',
+    accentRGB: '132, 204, 22',
     previewImage: 'https://res.cloudinary.com/dwpjwccxd/image/upload/v1773652749/bigbasket_jpbaks.png',
-    figma: 'https://www.figma.com/file/placeholder-big-basket',
   },
   {
     title: 'Hindustan Times',
@@ -37,8 +38,8 @@ const PROJECTS = [
     youtube: 'https://youtu.be/B8IzTf9F2_s?si=fFIOJqTjmkc6Oznf',
     tech: ['React', 'JavaScript'],
     color: '#f97316',
+    accentRGB: '249, 115, 22',
     previewImage: 'https://res.cloudinary.com/dwpjwccxd/image/upload/v1773652557/hindustantimes_jlfmyn.png',
-    figma: 'https://www.figma.com/file/placeholder-hindustan-times',
   },
   {
     title: 'InDrive',
@@ -49,8 +50,8 @@ const PROJECTS = [
     youtube: 'https://youtu.be/QsRTTQAfC84?si=0XAF5-kgrb6hye4C',
     tech: ['React', 'Node.js', 'JavaScript'],
     color: '#38bdf8',
-    previewImage: 'https://res.cloudinary.com/dwpjwccxd/image/upload/v1773652844/indrive_gzmkqj.png',
-    figma: 'https://www.figma.com/file/placeholder-indrive',
+    accentRGB: '56, 189, 248',
+    previewImage: 'https://res.cloudinary.com/dwpjwccxd/image/upload/v1773652844/indrive_gzmkqj.
   },
 ];
 
@@ -89,114 +90,119 @@ const PreviewPlaceholder = ({ color, title }) => (
 function ProjectCard({ project, index, onOpen, isCenter }) {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: '-80px' });
+  useGlowTracking(ref);
 
   return (
     <motion.article
       ref={ref}
-      className="project-card-v2"
+      className="gcard-wrapper"
       initial={{ opacity: 0, y: 50 }}
       animate={inView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.55, ease: 'easeOut' }}
       onClick={() => isCenter && onOpen(project)}
-      style={{ 
+      style={{
         cursor: isCenter ? 'pointer' : 'default',
         boxShadow: isCenter ? `0 0 40px ${project.color}30` : 'none',
         transition: 'box-shadow 0.4s ease',
         margin: '0 auto',
+        '--card-accent-rgb': project.accentRGB || '127, 90, 240',
+        borderRadius: '22px' // Required for gcard-wrapper
       }}
     >
-      {/* Left: Content */}
-      <div className="project-card-content">
-        <div>
-          <h3
-            style={{
-              fontSize: 'clamp(20px, 2.8vw, 26px)',
-              marginBottom: 8,
-              color: project.color,
-              fontFamily: 'var(--font-display)',
-              fontWeight: 700,
-            }}
-          >
-            {project.title}
-          </h3>
-          <p
-            style={{
-              fontSize: '14px',
-              color: '#b0b0b0',
-              lineHeight: 1.75,
-              fontFamily: 'var(--font-body)',
-            }}
-          >
-            {project.description}
-          </p>
-        </div>
+      <div className="project-card-v2 gcard-inner" style={{ borderRadius: 'inherit', background: '#121218' }}>
+        {/* Left: Content */}
+        <div className="project-card-content">
+          <div style={{ textAlign: 'center' }}>
+            <h3
+              style={{
+                fontSize: 'clamp(20px, 2.8vw, 26px)',
+                marginBottom: 8,
+                color: project.color,
+                fontFamily: 'var(--font-display)',
+                fontWeight: 700,
+              }}
+            >
+              {project.title}
+            </h3>
+            <p
+              style={{
+                fontSize: '14px',
+                color: '#b0b0b0',
+                lineHeight: 1.75,
+                fontFamily: 'var(--font-body)',
+              }}
+            >
+              {project.description}
+            </p>
+          </div>
 
-        <div className="project-meta" aria-label={`${project.title} tech stack`}>
-          {project.tech.map((tech) => (
-            <span key={tech} className="project-tag">
-              <span style={{ display: 'inline-flex', alignItems: 'center', gap: 6 }}>
-                {techIconFor(tech)}
-                <span>{tech}</span>
+          <div className="project-meta" aria-label={`${project.title} tech stack`}>
+            {project.tech.map((tech) => (
+              <span key={tech} className="project-tag">
+                <span style={{ display: 'inline-flex', alignItems: 'center', gap: 6 }}>
+                  {techIconFor(tech)}
+                  <span>{tech}</span>
+                </span>
               </span>
-            </span>
-          ))}
-        </div>
+            ))}
+          </div>
 
-        <div className="project-links">
-          <a
-            href={project.github}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn-outline"
-            style={{ paddingBlock: 10, paddingInline: 18, borderRadius: 999, fontSize: 11 }}
-            onClick={(e) => e.stopPropagation()}
-          >
-            GITHUB
-          </a>
-          <a
-            href={project.live}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn-primary"
-            style={{ paddingBlock: 10, paddingInline: 18, borderRadius: 999, fontSize: 11 }}
-            onClick={(e) => e.stopPropagation()}
-          >
-            LIVE DEMO
-          </a>
-          {project.figma && (
+          <div className="project-links">
             <a
-              href={project.figma}
+              href={project.github}
               target="_blank"
               rel="noopener noreferrer"
               className="btn-outline"
-              style={{ paddingBlock: 10, paddingInline: 18, borderRadius: 999, fontSize: 11, borderColor: '#a259ff', color: '#a259ff' }}
+              style={{ paddingBlock: 10, paddingInline: 18, borderRadius: 999, fontSize: 11 }}
               onClick={(e) => e.stopPropagation()}
             >
-              FIGMA
+              GITHUB
             </a>
-          )}
-          <a
-            href={project.youtube}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn-yt"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
-            </svg>
-            YOUTUBE DEMO
-          </a>
+            <a
+              href={project.live}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-primary"
+              style={{ paddingBlock: 10, paddingInline: 18, borderRadius: 999, fontSize: 11 }}
+              onClick={(e) => e.stopPropagation()}
+            >
+              LIVE DEMO
+            </a>
+            {project.figma && (
+              <a
+                href={project.figma}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-outline"
+                style={{ paddingBlock: 10, paddingInline: 18, borderRadius: 999, fontSize: 11, borderColor: '#a259ff', color: '#a259ff' }}
+                onClick={(e) => e.stopPropagation()}
+              >
+                FIGMA
+              </a>
+            )}
+            <a
+              href={project.youtube}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-yt"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+              </svg>
+              YOUTUBE DEMO
+            </a>
+          </div>
         </div>
-      </div>
 
-      {/* Right: Preview Image */}
-      <div className="project-card-preview">
-        {project.previewImage ? (
-          <img src={project.previewImage} alt={`${project.title} preview`} />
-        ) : (
-          <PreviewPlaceholder color={project.color} title={project.title} />
-        )}
+        {/* Right: Preview Image */}
+        <div className="project-card-preview">
+          {project.previewImage ? (
+            <img src={project.previewImage} alt={`${project.title} preview`} />
+          ) : (
+            <PreviewPlaceholder color={project.color} title={project.title} />
+          )}
+        </div>
       </div>
     </motion.article>
   );
@@ -213,11 +219,11 @@ export default function ProjectsSection() {
           A selection of work that highlights my approach to structure, usability, and modern web stacks.
         </p>
 
-        <Carousel 
-          items={PROJECTS} 
+        <Carousel
+          items={PROJECTS}
           renderItem={(project, index, isCenter) => (
             <ProjectCard key={project.title} project={project} index={index} isCenter={isCenter} onOpen={setActive} />
-          )} 
+          )}
         />
       </div>
 
