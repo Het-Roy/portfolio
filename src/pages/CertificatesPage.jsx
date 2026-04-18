@@ -31,8 +31,17 @@ export default function CertificatesPage() {
   return (
     <div className="app-root">
       <Helmet>
-        <title>Certificates | Het Roy Portfolio</title>
-        <meta name="description" content="View Het Roy's professional certifications and course completions in web development and computer science." />
+        <title>Certifications & Awards | Het Roy Portfolio</title>
+        <meta name="description" content="View Het Roy's extensive professional certifications, course completion badges, and academic awards in computer science and full-stack web development." />
+        <meta name="keywords" content="Het Roy Certificates, Tech Certifications, Web Development Awards, Professional Recognition, Software Developer Certs" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://portfolio-hetroy.vercel.app/certificates" />
+        <meta property="og:title" content="Certifications & Awards | Het Roy Portfolio" />
+        <meta property="og:description" content="View Het Roy's extensive professional certifications, course completion badges, and academic awards in computer science and full-stack web development." />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Certifications & Awards | Het Roy Portfolio" />
+        <meta name="twitter:description" content="View Het Roy's extensive professional certifications, course completion badges, and academic awards in computer science and full-stack web development." />
+        <link rel="canonical" href="https://portfolio-hetroy.vercel.app/certificates" />
       </Helmet>
       <Background />
       <CustomCursor position={cursorPos} />

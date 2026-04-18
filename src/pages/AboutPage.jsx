@@ -31,8 +31,17 @@ export default function AboutPage() {
   return (
     <div className="app-root">
       <Helmet>
-        <title>About | Het Roy Portfolio</title>
-        <meta name="description" content="Learn about Het Roy — Full Stack Developer, his background, skills, and passion for building modern web applications." />
+        <title>About Het Roy | Background, Experience & Passion</title>
+        <meta name="description" content="Learn more about Het Roy, his journey as a software developer, technical background, and passion for creating impactful scalable web applications." />
+        <meta name="keywords" content="About Het Roy, Het Roy Background, Software Engineer Journey, Full Stack Developer Resume, Web Developer Experience" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://portfolio-hetroy.vercel.app/about" />
+        <meta property="og:title" content="About Het Roy | Background, Experience & Passion" />
+        <meta property="og:description" content="Learn more about Het Roy, his journey as a software developer, technical background, and passion for creating impactful scalable web applications." />
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:title" content="About Het Roy | Background, Experience & Passion" />
+        <meta name="twitter:description" content="Learn more about Het Roy, his journey as a software developer, technical background, and passion for creating impactful scalable web applications." />
+        <link rel="canonical" href="https://portfolio-hetroy.vercel.app/about" />
       </Helmet>
       <Background />
       <CustomCursor position={cursorPos} />

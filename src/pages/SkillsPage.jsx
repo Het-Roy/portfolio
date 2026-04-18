@@ -31,8 +31,17 @@ export default function SkillsPage() {
   return (
     <div className="app-root">
       <Helmet>
-        <title>Skills | Het Roy Portfolio</title>
-        <meta name="description" content="Explore the technical skills and technologies that Het Roy works with, including React, Node.js, and more." />
+        <title>Technical Skills & Tech Stack | Het Roy Portfolio</title>
+        <meta name="description" content="Discover Het Roy's technical expertise and proficiency including React, Node.js, MongoDB, JavaScript, and other modern frontend and backend technologies." />
+        <meta name="keywords" content="Het Roy Skills, React Developer Skills, Node.js, MERN Stack, Frontend Technologies, Software Engineering Tech Stack" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://portfolio-hetroy.vercel.app/skills" />
+        <meta property="og:title" content="Technical Skills & Tech Stack | Het Roy Portfolio" />
+        <meta property="og:description" content="Discover Het Roy's technical expertise and proficiency including React, Node.js, MongoDB, JavaScript, and other modern frontend and backend technologies." />
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:title" content="Technical Skills & Tech Stack | Het Roy Portfolio" />
+        <meta name="twitter:description" content="Discover Het Roy's technical expertise and proficiency including React, Node.js, MongoDB, JavaScript, and other modern frontend and backend technologies." />
+        <link rel="canonical" href="https://portfolio-hetroy.vercel.app/skills" />
       </Helmet>
       <Background />
       <CustomCursor position={cursorPos} />

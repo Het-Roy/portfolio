@@ -31,8 +31,17 @@ export default function HackathonPage() {
   return (
     <div className="app-root">
       <Helmet>
-        <title>Hackathon | Het Roy Portfolio</title>
-        <meta name="description" content="Discover Het Roy's hackathon experiences, achievements, and projects built under pressure and teamwork." />
+        <title>Hackathon Experience & Achievements | Het Roy Portfolio</title>
+        <meta name="description" content="Read about Het Roy's competitive programming and hackathon experiences, awards, teamwork, and the innovative technological solutions built under pressure." />
+        <meta name="keywords" content="Het Roy Hackathons, Competitive Programming, Tech Achievements, Hackathon Winner, Codefest, Tech Competitions" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://portfolio-hetroy.vercel.app/hackathon" />
+        <meta property="og:title" content="Hackathon Experience & Achievements | Het Roy Portfolio" />
+        <meta property="og:description" content="Read about Het Roy's competitive programming and hackathon experiences, awards, teamwork, and the innovative technological solutions built under pressure." />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Hackathon Experience & Achievements | Het Roy Portfolio" />
+        <meta name="twitter:description" content="Read about Het Roy's competitive programming and hackathon experiences, awards, teamwork, and the innovative technological solutions built under pressure." />
+        <link rel="canonical" href="https://portfolio-hetroy.vercel.app/hackathon" />
       </Helmet>
       <Background />
       <CustomCursor position={cursorPos} />

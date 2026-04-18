@@ -31,8 +31,17 @@ export default function ProjectsPage() {
   return (
     <div className="app-root">
       <Helmet>
-        <title>Projects | Het Roy Portfolio</title>
-        <meta name="description" content="Browse Het Roy's portfolio projects — full stack apps, APIs, and more built with modern web technologies." />
+        <title>Featured Software Projects | Het Roy Portfolio</title>
+        <meta name="description" content="Explore Het Roy's entire portfolio of web development projects, including dynamic e-commerce sites, API integrations, and robust full-stack applications." />
+        <meta name="keywords" content="Het Roy Projects, React Portfolio Projects, Full Stack Applications, MERN Stack Projects, Open Source Developer, GitHub Projects" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://portfolio-hetroy.vercel.app/projects" />
+        <meta property="og:title" content="Featured Software Projects | Het Roy Portfolio" />
+        <meta property="og:description" content="Explore Het Roy's entire portfolio of web development projects, including dynamic e-commerce sites, API integrations, and robust full-stack applications." />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Featured Software Projects | Het Roy Portfolio" />
+        <meta name="twitter:description" content="Explore Het Roy's entire portfolio of web development projects, including dynamic e-commerce sites, API integrations, and robust full-stack applications." />
+        <link rel="canonical" href="https://portfolio-hetroy.vercel.app/projects" />
       </Helmet>
       <Background />
       <CustomCursor position={cursorPos} />

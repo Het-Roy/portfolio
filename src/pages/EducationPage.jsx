@@ -32,8 +32,17 @@ export default function EducationPage() {
   return (
     <div className="app-root">
       <Helmet>
-        <title>Education | Het Roy Portfolio</title>
-        <meta name="description" content="Het Roy's educational background, academic achievements, and institutions attended." />
+        <title>Education & Academics | Het Roy Portfolio</title>
+        <meta name="description" content="Explore Het Roy's educational background, academic achievements, universities attended, and foundational learning in Computer Science and software engineering." />
+        <meta name="keywords" content="Het Roy Education, Academic Background, Computer Science Degree, Software Engineering Education, Student Portfolio" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://portfolio-hetroy.vercel.app/education" />
+        <meta property="og:title" content="Education & Academics | Het Roy Portfolio" />
+        <meta property="og:description" content="Explore Het Roy's educational background, academic achievements, universities attended, and foundational learning in Computer Science and software engineering." />
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:title" content="Education & Academics | Het Roy Portfolio" />
+        <meta name="twitter:description" content="Explore Het Roy's educational background, academic achievements, universities attended, and foundational learning in Computer Science and software engineering." />
+        <link rel="canonical" href="https://portfolio-hetroy.vercel.app/education" />
       </Helmet>
       <Background />
       <CustomCursor position={cursorPos} />

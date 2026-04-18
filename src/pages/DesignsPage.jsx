@@ -31,8 +31,17 @@ export default function DesignsPage() {
   return (
     <div className="app-root">
       <Helmet>
-        <title>Designs | Het Roy Portfolio</title>
-        <meta name="description" content="Explore Het Roy's UI/UX designs and Figma prototypes showcasing creativity and design thinking." />
+        <title>UI/UX & Figma Designs | Het Roy Portfolio</title>
+        <meta name="description" content="Check out Het Roy's UI/UX design concepts, modern layouts, and interactive Figma prototypes, fusing creative aesthetics with practical web development." />
+        <meta name="keywords" content="Het Roy Designs, UI/UX Portfolio, Figma Mockups, Web Design, Creative Developer, Frontend UI Design" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://portfolio-hetroy.vercel.app/designs" />
+        <meta property="og:title" content="UI/UX & Figma Designs | Het Roy Portfolio" />
+        <meta property="og:description" content="Check out Het Roy's UI/UX design concepts, modern layouts, and interactive Figma prototypes, fusing creative aesthetics with practical web development." />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="UI/UX & Figma Designs | Het Roy Portfolio" />
+        <meta name="twitter:description" content="Check out Het Roy's UI/UX design concepts, modern layouts, and interactive Figma prototypes, fusing creative aesthetics with practical web development." />
+        <link rel="canonical" href="https://portfolio-hetroy.vercel.app/designs" />
       </Helmet>
       <Background />
       <CustomCursor position={cursorPos} />

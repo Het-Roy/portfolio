@@ -32,8 +32,17 @@ export default function ContactPage() {
   return (
     <div className="app-root">
       <Helmet>
-        <title>Contact | Het Roy Portfolio</title>
-        <meta name="description" content="Get in touch with Het Roy — open to opportunities, collaborations, and conversations about web development." />
+        <title>Contact Het Roy | Hire a Full Stack Developer</title>
+        <meta name="description" content="Get in touch with Het Roy for freelance work, full-time job opportunities, collaborations, or tech networking. Reach out via email, LinkedIn, or GitHub." />
+        <meta name="keywords" content="Contact Het Roy, Hire React Developer, Freelance Web Developer, Software Engineer Contact, Tech Networking, Hire SDE" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://portfolio-hetroy.vercel.app/contact" />
+        <meta property="og:title" content="Contact Het Roy | Hire a Full Stack Developer" />
+        <meta property="og:description" content="Get in touch with Het Roy for freelance work, full-time job opportunities, collaborations, or tech networking. Reach out via email, LinkedIn, or GitHub." />
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:title" content="Contact Het Roy | Hire a Full Stack Developer" />
+        <meta name="twitter:description" content="Get in touch with Het Roy for freelance work, full-time job opportunities, collaborations, or tech networking. Reach out via email, LinkedIn, or GitHub." />
+        <link rel="canonical" href="https://portfolio-hetroy.vercel.app/contact" />
       </Helmet>
       <Background />
       <CustomCursor position={cursorPos} />

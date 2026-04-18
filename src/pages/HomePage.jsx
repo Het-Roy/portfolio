@@ -48,13 +48,17 @@ export default function HomePage() {
   return (
     <div className="app-root">
       <Helmet>
-        <title>Het Roy | Portfolio</title>
-        <meta name="description" content="Portfolio of Het Roy, a Full Stack Developer & SDE. Showcasing projects built with React, Vite, and modern web technologies." />
-        <meta name="keywords" content="het roy portfolio, portfolio, het roy, sde portfolio, react, vite, HET ROY, Het Roy" />
-        <meta property="og:title" content="Het Roy | Portfolio" />
-        <meta property="og:description" content="Explore my projects and skills as a Full Stack Developer." />
-        <meta property="og:url" content="https://portfolio-hetroy.vercel.app/" />
+        <title>Het Roy | Full Stack Developer & SDE Portfolio</title>
+        <meta name="description" content="Explore the portfolio of Het Roy, a passionate Full Stack Developer specializing in React, Node.js, and modern web technologies. Discover my latest projects and skills." />
+        <meta name="keywords" content="Het Roy, Het Roy Portfolio, Full Stack Developer, React Developer, SDE, Frontend Developer, Web Development, India" />
         <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://portfolio-hetroy.vercel.app/" />
+        <meta property="og:title" content="Het Roy | Full Stack Developer & SDE Portfolio" />
+        <meta property="og:description" content="Explore the portfolio of Het Roy, a passionate Full Stack Developer specializing in React, Node.js, and modern web technologies." />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Het Roy | Full Stack Developer & SDE Portfolio" />
+        <meta name="twitter:description" content="Explore the portfolio of Het Roy, a passionate Full Stack Developer specializing in React, Node.js, and modern web technologies." />
+        <link rel="canonical" href="https://portfolio-hetroy.vercel.app/" />
       </Helmet>
       <Background />
       <CustomCursor position={cursorPos} />
